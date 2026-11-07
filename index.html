@@ -490,6 +490,7 @@ body{background:#000}
 .pd-timer b{font-size:clamp(38px,4vw,56px);line-height:.9;color:var(--orange);font-variant-numeric:tabular-nums}
 .pd-timer small{font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .pd-timer i{font-style:normal;font-size:clamp(30px,3vw,44px);line-height:1;color:var(--muted-2)}
+.pd-ltd{font-family:var(--display);font-weight:900;font-style:italic;text-transform:uppercase;font-size:clamp(28px,3.4vw,46px);line-height:.95;color:var(--orange)}
 .pd-limit{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700}
 .pd-limit i{width:8px;height:8px;border-radius:50%;background:var(--orange)}
 .pd-cta{margin-top:20px;background:#000;color:#fff;box-shadow:0 14px 40px -12px rgba(0,0,0,.6)}
@@ -920,8 +921,8 @@ body{background:#000}
         <b class="pd-new"><span>R$</span> <span>2</span><span>.</span><span>0</span><span>9</span><span>9</span></b>
         <p class="pd-sub">15x de R$ 139,93 sem juros · R$ 1.889,10 no Pix · frete grátis*</p>
         <div class="pd-urg">
-          <span class="pd-tlabel">Esta condição termina em</span>
-          <div class="pd-timer cd" role="timer"><div><b data-u="h">00</b><small>horas</small></div><i>:</i><div><b data-u="m">00</b><small>min</small></div><i>:</i><div><b data-u="s">00</b><small>seg</small></div></div>
+          <span class="pd-tlabel">Atenção</span>
+          <b class="pd-ltd">Oferta por tempo limitado</b>
           <span class="pd-limit"><i></i>Unidades com preço de lançamento são limitadas</span>
         </div>
         <a href="https://megagym.com.br/cart/67626117005586:1" class="btn pd-cta">Garantir a minha agora
@@ -951,7 +952,7 @@ body{background:#000}
           <div class="big"><small>R$</small>2.099<small>,00</small></div>
           <div class="inst">ou <b>15x de R$ 139,93</b> sem juros</div>
           <span class="pix">◆ R$ 1.889,10 no Pix (10% off)</span>
-          <div class="card-cd">Preço de lançamento termina em <span class="cd cd-inline"><b data-u="h">00</b>:<b data-u="m">00</b>:<b data-u="s">00</b></span></div>
+          <div class="card-cd"><span class="cd">⚡</span>Preço de lançamento por tempo limitado · unidades limitadas</div>
           <ul>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg>Frete grátis*</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg>1 ano de garantia estendida</li>
@@ -1059,17 +1060,6 @@ body{background:#000}
     if(exc[v]){r.textContent='Para '+exc[v]+', o frete é calculado no checkout.';r.className='ship-res no'}
     else{r.textContent='✓ Frete GRÁTIS para '+v+'! Você não paga nada pela entrega.';r.className='ship-res ok'}
   });
-  // Countdown (urgency). Set PROMO_END to the real end of the promotion, e.g. '2026-11-30T23:59:59-03:00'.
-  // While it is null, the timer counts down to the end of the current day.
-  const PROMO_END = null;
-  function promoEnd(){ if(PROMO_END) return new Date(PROMO_END); const d=new Date(); d.setHours(23,59,59,999); return d; }
-  function tickCd(){
-    let ms=Math.max(0,promoEnd()-Date.now());
-    const h=Math.floor(ms/36e5), m=Math.floor(ms%36e5/6e4), sec=Math.floor(ms%6e4/1e3);
-    const v={h:String(h).padStart(2,'0'),m:String(m).padStart(2,'0'),s:String(sec).padStart(2,'0')};
-    $$('.cd [data-u]').forEach(b=>{ if(b.textContent!==v[b.dataset.u]) b.textContent=v[b.dataset.u]; });
-  }
-  tickCd(); setInterval(tickCd,1000);
   // Calculator
   const fmt=n=>'R$ '+Math.round(n).toLocaleString('pt-BR');
   const mens=$('#mens'),ppl=$('#ppl');
