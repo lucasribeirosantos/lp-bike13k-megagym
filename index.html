@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Smart Bike Magnetic 13K | MegaGym</title>
-<meta name="description" content="Smart Bike Magnetic 13K MegaGym: disco de inércia de 13 kg, resistência magnética silenciosa e conexão com Zwift, MyWhoosh e Kinomap. De R$ 3.990 por R$ 2.099 em 15x sem juros. Frete grátis.">
+<meta name="description" content="Smart Bike Magnetic 13K MegaGym: disco de inércia de 13 kg, resistência magnética silenciosa e conexão com Zwift, MyWhoosh e Kinomap. De R$ 3.990 por R$ 2.099 em 15x sem juros. Frete grátis para 21 estados + DF.">
 <meta name="theme-color" content="#0a0a0a">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
@@ -126,6 +126,17 @@ section{position:relative}
 .ring-spin{transform-origin:50% 50%}
 .hero-bike{position:relative;z-index:3;width:86%;filter:drop-shadow(0 50px 60px rgba(0,0,0,.75)) drop-shadow(0 0 80px rgba(252,84,0,.15));will-change:transform}
 .hero-floor{position:absolute;bottom:6%;left:50%;width:70%;height:40px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(252,84,0,.45),transparent 70%);filter:blur(14px);z-index:2}
+.fg-badge{position:absolute;z-index:5;width:var(--fg,150px);aspect-ratio:1;border-radius:50%;background:var(--orange);color:#000;display:grid;place-items:center;box-shadow:0 20px 40px -14px rgba(0,0,0,.8),inset 0 0 0 4px rgba(0,0,0,.12)}
+.fg-ring{position:absolute;inset:0;width:100%;height:100%;animation:fgspin 14s linear infinite}
+.fg-ring text{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:.06em;fill:#000}
+.fg-core{display:flex;flex-direction:column;align-items:center;justify-content:center;width:52%;aspect-ratio:1;border-radius:50%;background:#000;color:var(--orange)}
+.fg-core svg{width:44%;height:auto}
+.fg-core b{font-family:var(--display);font-weight:900;font-size:calc(var(--fg,150px)*.11);line-height:1;letter-spacing:.04em;margin-top:2px}
+@keyframes fgspin{to{transform:rotate(360deg)}}
+.fg-hero{left:0;bottom:4%;--fg:clamp(118px,11vw,160px);transform:rotate(-10deg)}
+.fg-card{left:0;top:4%;transform:rotate(-10deg);--fg:clamp(104px,9vw,136px)}
+@media (max-width:1000px){.fg-hero{left:2%;bottom:2%;--fg:104px}}
+@media (prefers-reduced-motion:reduce){.fg-ring{animation:none}}
 .chip{position:absolute;z-index:4;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:rgba(20,20,20,.72);border:1px solid var(--line-2);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 20px 40px -20px #000}
 .chip i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--orange);color:#000;font-style:normal;font-family:var(--display);font-weight:900;font-size:13px}
 .chip i svg{width:18px;height:18px}
@@ -530,15 +541,15 @@ body{background:#000}
 <!-- TOPBAR -->
 <div class="topbar" role="note">
   <div class="topbar-track">
-    <span>Frete grátis para todo o Brasil*</span><span>1 ano de garantia estendida</span><span>15x sem juros no cartão</span><span>10% off no Pix</span><span>Em estoque · envio imediato</span><span>Chega pré-montada</span>
-    <span>Frete grátis para todo o Brasil*</span><span>1 ano de garantia estendida</span><span>15x sem juros no cartão</span><span>10% off no Pix</span><span>Em estoque · envio imediato</span><span>Chega pré-montada</span>
+    <span>Frete grátis para 21 estados + DF*</span><span>1 ano de garantia estendida</span><span>15x sem juros no cartão</span><span>10% off no Pix</span><span>Em estoque · envio imediato</span><span>Chega pré-montada</span>
+    <span>Frete grátis para 21 estados + DF*</span><span>1 ano de garantia estendida</span><span>15x sem juros no cartão</span><span>10% off no Pix</span><span>Em estoque · envio imediato</span><span>Chega pré-montada</span>
   </div>
 </div>
 
 <!-- HEADER -->
 <header class="header">
   <div class="wrap header-in">
-    <a href="https://megagym.com.br" class="header-logo" aria-label="MegaGym"><img src="assets/logo.png" alt="MegaGym" width="800" height="206"></a>
+    <a href="#topo" class="header-logo" aria-label="MegaGym, voltar ao topo"><img src="assets/logo.png" alt="MegaGym" width="800" height="206"></a>
     <nav class="header-nav" aria-label="Seções">
       <a href="#tecnologia">Tecnologia</a>
       <a href="#conectada">Conectada</a>
@@ -552,7 +563,7 @@ body{background:#000}
 
 <main>
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="topo">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
@@ -582,7 +593,7 @@ body{background:#000}
         <a href="#tecnologia" class="btn btn-ghost">Ver a tecnologia</a>
       </div>
       <div class="trust-row h-fade">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>Frete grátis*</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><b style="color:var(--text)">Frete grátis</b>&nbsp;para 21 estados + DF*</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>1 ano de garantia estendida</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8"/></svg>Chega pré-montada</span>
       </div>
@@ -609,7 +620,7 @@ body{background:#000}
       <div class="chip chip-1"><i>13</i><div>Disco de 13 kg<small>Pedalada firme e estável</small></div></div>
       <div class="chip chip-2"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7l10 10-5 5V2l5 5L7 17"/></svg></i><div>Bluetooth<small>Zwift · MyWhoosh · Kinomap</small></div></div>
       <div class="chip chip-3"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M11 5L6 9H2v6h4l5 4zM23 9l-6 6M17 9l6 6"/></svg></i><div>Zero ruído<small>Resistência magnética</small></div></div>
-      <div class="chip chip-4"><i>165</i><div>Suporta até 165 kg<small>Aço com pintura anticorrosão</small></div></div>
+      <div class="fg-badge fg-hero" role="img" aria-label="Frete grátis para 21 estados + DF"><svg class="fg-ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="fgp-fg-hero" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><text><textPath href="#fgp-fg-hero" textLength="474">FRETE GRÁTIS • 21 ESTADOS + DF • FRETE GRÁTIS • 21 ESTADOS + DF •</textPath></text></svg><div class="fg-core" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><b>GRÁTIS</b></div></div>
     </div>
   </div>
 </section>
@@ -907,14 +918,14 @@ body{background:#000}
     <div class="pd-final">
       <small class="pd-k">Preço de lançamento</small>
       <b class="pd-new"><span>R$</span> <span>2</span><span>.</span><span>0</span><span>9</span><span>9</span></b>
-      <p class="pd-sub">15x de R$ 139,93 sem juros · R$ 1.889,10 no Pix · frete grátis*</p>
+      <p class="pd-sub">15x de R$ 139,93 sem juros · R$ 1.889,10 no Pix · frete grátis para 21 estados + DF*</p>
       <div class="pd-urg">
         <b class="pd-ltd">Oferta por tempo limitado</b>
         <span class="pd-tlabel">Esta condição termina em</span>
         <div class="pd-timer" role="timer"><div><b data-u="m">15</b><small>min</small></div><i>:</i><div><b data-u="s">00</b><small>seg</small></div></div>
         <span class="pd-limit"><i></i>Unidades com preço de lançamento são limitadas</span>
       </div>
-      <a href="https://megagym.com.br/cart/67626117005586:1" class="btn pd-cta">Garantir a minha agora
+      <a href="#oferta" class="btn pd-cta">Garantir a minha agora
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
     <div class="pd-stamp" aria-hidden="true">47%<small>OFF</small></div>
@@ -927,13 +938,13 @@ body{background:#000}
     <div class="sec-head">
       <span class="eyebrow rv">Oferta especial de lançamento</span>
       <h2 class="display rv">Garanta a sua <span class="o">Smart 13K.</span></h2>
-      <p class="lead rv">Mais de 47% de desconto, frete grátis e 1 ano de garantia estendida. O estoque está alto, mas o preço de lançamento não fica para sempre.</p>
+      <p class="lead rv">Mais de 47% de desconto, frete grátis para 21 estados + DF e 1 ano de garantia estendida. O estoque está alto, mas o preço de lançamento não fica para sempre.</p>
     </div>
 
     <div class="offer-grid">
       <div class="card main rv">
         <span class="card-flag">Oferta de lançamento</span>
-        <div class="card-img"><img src="assets/bike-cut.webp" alt="Smart Bike Magnetic 13K" loading="lazy"></div>
+        <div class="card-img"><img src="assets/bike-cut.webp" alt="Smart Bike Magnetic 13K" loading="lazy"><div class="fg-badge fg-card" role="img" aria-label="Frete grátis para 21 estados + DF"><svg class="fg-ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="fgp-fg-card" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><text><textPath href="#fgp-fg-card" textLength="474">FRETE GRÁTIS • 21 ESTADOS + DF • FRETE GRÁTIS • 21 ESTADOS + DF •</textPath></text></svg><div class="fg-core" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><b>GRÁTIS</b></div></div></div>
         <div>
           <h3>Smart Bike Magnetic 13K</h3>
           <div class="from">De <s>R$ 3.990,00</s> por</div>
@@ -942,12 +953,12 @@ body{background:#000}
           <span class="pix">◆ R$ 1.889,10 no Pix (10% off)</span>
           <div class="card-cd">Oferta por tempo limitado. Termina em <span class="tmr"><b data-u="m">15</b>:<b data-u="s">00</b></span></div>
           <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg>Frete grátis*</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg><b>Frete grátis para 21 estados + DF*</b></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg>1 ano de garantia estendida</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg>Enviada pré-montada + ferramentas</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg>Peças e assistência no Brasil</li>
           </ul>
-          <a class="btn btn-block magnetic" href="https://megagym.com.br/cart/67626117005586:1">Comprar agora
+          <a class="btn btn-block magnetic" href="#oferta" data-buy>Comprar agora
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <div class="stock"><i></i>Em estoque · envio imediato</div>
         </div>
@@ -958,7 +969,7 @@ body{background:#000}
     <div class="ship rv">
       <div class="ship-l">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
-        <div><b>Frete grátis</b><span>Confira para o seu estado</span></div>
+        <div><b>Frete grátis</b><span>21 estados + DF. Confira o seu</span></div>
       </div>
       <div class="ship-r">
         <select id="uf" aria-label="Selecione seu estado">
@@ -972,7 +983,7 @@ body{background:#000}
     <div class="guar">
       <div class="g rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><div><b>1 ano de garantia</b><span>Garantia estendida na oferta de lançamento</span></div></div>
       <div class="g rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg><div><b>Assistência no Brasil</b><span>Peças de reposição a pronta entrega</span></div></div>
-      <div class="g rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><div><b>Compra segura</b><span>Checkout oficial MegaGym, dados protegidos</span></div></div>
+      <div class="g rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><div><b>Compra segura</b><span>Pagamento protegido e dados criptografados</span></div></div>
       <div class="g rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><div><b>Até 21x no cartão</b><span>15x sem juros · 10% off no Pix</span></div></div>
     </div>
   </div>
@@ -986,7 +997,7 @@ body{background:#000}
       <h2 class="display rv">Tudo que você <span class="o">precisa saber.</span></h2>
     </div>
     <div>
-      <div class="qa open"><button type="button" aria-expanded="true">O frete é grátis mesmo?<i></i></button><div class="qa-body"><div><p>Sim. O frete é grátis para todos os estados do Brasil, exceto Amapá (AP), Amazonas (AM), Roraima (RR), Acre (AC) e Rondônia (RO). Para esses estados, o frete é calculado no checkout.</p></div></div></div>
+      <div class="qa open"><button type="button" aria-expanded="true">O frete é grátis mesmo?<i></i></button><div class="qa-body"><div><p>Sim. O frete é grátis para 21 estados + o Distrito Federal. Ficam de fora apenas Amapá (AP), Amazonas (AM), Roraima (RR), Acre (AC) e Rondônia (RO). Para esses estados, o frete é calculado no checkout.</p></div></div></div>
       <div class="qa"><button type="button" aria-expanded="false">Preciso montar? É difícil?<i></i></button><div class="qa-body"><div><p>Ela chega pré-montada e acompanha as ferramentas. A montagem é simplificada: em poucos minutos você está pedalando.</p></div></div></div>
       <div class="qa"><button type="button" aria-expanded="false">Faz barulho? Dá para usar em apartamento?<i></i></button><div class="qa-body"><div><p>A resistência é magnética, sem contato físico com o disco, e a transmissão é por correia. Isso a torna praticamente silenciosa, ideal para apartamento e para treinar cedo ou tarde da noite.</p></div></div></div>
       <div class="qa"><button type="button" aria-expanded="false">Funciona com Zwift e MyWhoosh?<i></i></button><div class="qa-body"><div><p>Sim. A conexão é via Bluetooth com smartphone ou tablet, e é possível espelhar na Smart TV. Funciona com Zwift, MyWhoosh, Kinomap e Z-Sport. Os apps são de terceiros e podem exigir assinatura própria. O ajuste de carga é manual: a resistência não muda sozinha conforme o percurso.</p></div></div></div>
@@ -1003,9 +1014,9 @@ body{background:#000}
   <div class="final-bg" aria-hidden="true"></div>
   <div class="wrap">
     <h2 class="display rv">Amanhã às 6h,<br><span class="o">você já pedala.</span></h2>
-    <p class="lead rv">Pare de pagar por um treino que você não faz. Garanta a sua Smart Bike Magnetic 13K com 47% OFF e frete grátis.</p>
+    <p class="lead rv">Pare de pagar por um treino que você não faz. Garanta a sua Smart Bike Magnetic 13K com 47% OFF e frete grátis para 21 estados + DF.</p>
     <p class="final-tm rv">Condição de lançamento termina em <span class="tmr"><b data-u="m">15</b>:<b data-u="s">00</b></span></p>
-    <a href="https://megagym.com.br/cart/67626117005586:1" class="btn magnetic rv">Garantir a minha por R$ 2.099
+    <a href="#oferta" class="btn magnetic rv">Garantir a minha por R$ 2.099
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
@@ -1014,14 +1025,14 @@ body{background:#000}
 <footer class="footer">
   <div class="wrap footer-in">
     <img src="assets/logo.png" alt="MegaGym" width="800" height="206">
-    <p>*Frete grátis para todos os estados, exceto AP, AM, RR, AC e RO. Preços e condições sujeitos a alteração sem aviso prévio.</p>
+    <p>*Frete grátis para 21 estados + DF. Não inclui AP, AM, RR, AC e RO. Preços e condições sujeitos a alteração sem aviso prévio.</p>
     <p>© MegaGym Equipamentos</p>
   </div>
 </footer>
 
 <div class="sticky-cta" id="stickyCta">
-  <div class="p"><b>R$ 2.099</b><span>Termina em <span class="tmr"><b data-u="m">15</b>:<b data-u="s">00</b></span> · 15x R$ 139,93</span></div>
-  <a href="https://megagym.com.br/cart/67626117005586:1" class="btn">Comprar</a>
+  <div class="p"><b>R$ 2.099</b><span>Frete grátis* · termina em <span class="tmr"><b data-u="m">15</b>:<b data-u="s">00</b></span> · 15x R$ 139,93</span></div>
+  <a href="#oferta" class="btn">Comprar</a>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
