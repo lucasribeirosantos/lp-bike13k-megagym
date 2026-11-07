@@ -921,8 +921,9 @@ body{background:#000}
         <b class="pd-new"><span>R$</span> <span>2</span><span>.</span><span>0</span><span>9</span><span>9</span></b>
         <p class="pd-sub">15x de R$ 139,93 sem juros · R$ 1.889,10 no Pix · frete grátis*</p>
         <div class="pd-urg">
-          <span class="pd-tlabel">Atenção</span>
           <b class="pd-ltd">Oferta por tempo limitado</b>
+          <span class="pd-tlabel">Esta condição termina em</span>
+          <div class="pd-timer" role="timer"><div><b data-u="m">15</b><small>min</small></div><i>:</i><div><b data-u="s">00</b><small>seg</small></div></div>
           <span class="pd-limit"><i></i>Unidades com preço de lançamento são limitadas</span>
         </div>
         <a href="https://megagym.com.br/cart/67626117005586:1" class="btn pd-cta">Garantir a minha agora
@@ -1060,6 +1061,14 @@ body{background:#000}
     if(exc[v]){r.textContent='Para '+exc[v]+', o frete é calculado no checkout.';r.className='ship-res no'}
     else{r.textContent='✓ Frete GRÁTIS para '+v+'! Você não paga nada pela entrega.';r.className='ship-res ok'}
   });
+  // Countdown in the price animation: counts down TIMER_MIN minutes and starts over when it reaches zero.
+  const TIMER_MIN = 15, TIMER_MS = TIMER_MIN*6e4, timerStart = Date.now();
+  function tickTimer(){
+    const left = TIMER_MS - ((Date.now()-timerStart) % TIMER_MS);
+    const v={m:String(Math.floor(left/6e4)).padStart(2,'0'), s:String(Math.floor(left%6e4/1e3)).padStart(2,'0')};
+    $$('.pd-timer [data-u]').forEach(b=>{ if(b.textContent!==v[b.dataset.u]) b.textContent=v[b.dataset.u]; });
+  }
+  tickTimer(); setInterval(tickTimer,250);
   // Calculator
   const fmt=n=>'R$ '+Math.round(n).toLocaleString('pt-BR');
   const mens=$('#mens'),ppl=$('#ppl');
