@@ -457,54 +457,52 @@ body{background:#000}
 .ig-down{margin:26px auto 0;width:52px;height:52px;border-radius:50%;border:2px solid #000;display:grid;place-items:center;font-weight:900;font-size:20px;animation:bob 1.6s ease-in-out infinite}
 @keyframes bob{50%{transform:translateY(8px)}}
 
-/* price drive */
+/* price drop */
 .pdrive{position:relative;height:100vh;height:100svh;background:#000;overflow:hidden}
-.pd-stage{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden}
+.pd-wipe{position:absolute;inset:0;background:var(--orange);transform:scaleX(0);transform-origin:0 50%}
+.pd-wipe::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(115deg,rgba(0,0,0,.07) 0 2px,transparent 2px 22px)}
+.pd-stage{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;padding:0 16px}
 .pd-stage>*{grid-area:1/1}
-.pd-lines{position:relative;width:0;height:0;align-self:end;margin-bottom:30vh}
-.pd-lines i{position:absolute;left:0;top:0;width:2px;height:60vmax;margin-left:-1px;transform-origin:50% 0;background:linear-gradient(180deg,transparent 0 25%,rgba(252,84,0,.9) 62%,transparent);opacity:0}
-.pd-lines i:nth-child(3n){background:linear-gradient(180deg,transparent 0 30%,rgba(255,255,255,.7) 65%,transparent);width:1px}
-.pd-old{align-self:start;margin-top:max(12vh,90px);text-align:center;position:relative;z-index:3}
-.pd-old small{display:block;font-weight:800;letter-spacing:.3em;text-transform:uppercase;font-size:12px;color:var(--muted);margin-bottom:6px}
-.pd-old-n{position:relative;font-family:var(--display);font-weight:900;font-style:italic;font-size:clamp(64px,10vw,170px);line-height:.85;letter-spacing:-.02em;white-space:nowrap;color:var(--text)}
+.pd-old{text-align:center;position:relative;z-index:2}
+.pd-old small{display:block;font-weight:800;letter-spacing:.3em;text-transform:uppercase;font-size:12px;color:var(--muted);margin-bottom:8px}
+.pd-old-n{position:relative;font-family:var(--display);font-weight:900;font-style:italic;font-size:clamp(84px,16vw,270px);line-height:.85;letter-spacing:-.02em;white-space:nowrap;color:var(--text)}
 .pd-old-n span{display:inline-block}
-.pd-strike{position:absolute;left:-4%;right:-4%;top:50%;height:clamp(6px,.9vw,12px);background:var(--orange);border-radius:4px;transform:scaleX(0) rotate(-6deg);transform-origin:0 50%}
-.pd-core{align-self:end;margin-bottom:4vh;position:relative;width:min(44vmin,440px);display:grid;place-items:center}
-.pd-core>*{grid-area:1/1}
-.pd-rings{width:150%;aspect-ratio:1;height:auto;overflow:visible;pointer-events:none}
-.pd-rings circle{transform-origin:300px 300px}
-.pd-glow{width:120%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(252,84,0,.5),rgba(252,84,0,.12) 45%,transparent 68%)}
-.pd-bike{width:100%;position:relative;filter:drop-shadow(0 30px 40px rgba(0,0,0,.9))}
-.pd-flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
-.pd-flood{position:absolute;inset:0;background:var(--orange);clip-path:circle(0% at 50% 80%);display:grid;place-items:center;text-align:center;color:#000;padding:0 16px}
-.pd-flood::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(115deg,rgba(0,0,0,.07) 0 2px,transparent 2px 22px);pointer-events:none}
-.pd-final{position:relative;display:flex;flex-direction:column;align-items:center}
+.pd-strike{position:absolute;left:-4%;right:-4%;top:50%;height:clamp(8px,1vw,16px);background:var(--orange);border-radius:4px;transform:scaleX(0) rotate(-6deg);transform-origin:0 50%}
+.pd-final{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;color:#000}
 .pd-k{font-weight:800;letter-spacing:.3em;text-transform:uppercase;font-size:clamp(11px,1.1vw,14px)}
-.pd-new{display:block;font-family:var(--display);font-weight:900;font-style:italic;font-size:clamp(84px,15vw,250px);line-height:.85;letter-spacing:-.02em;white-space:nowrap;margin-top:8px}
+.pd-new{display:block;font-family:var(--display);font-weight:900;font-style:italic;font-size:clamp(84px,14vw,230px);line-height:.85;letter-spacing:-.02em;white-space:nowrap;margin-top:8px}
 .pd-new span{display:inline-block}
 .pd-sub{margin-top:14px;font-weight:700;font-size:clamp(14px,1.4vw,19px)}
-.pd-urg{margin-top:22px;display:flex;flex-direction:column;align-items:center;gap:10px;padding:16px 22px;border-radius:20px;background:#000;color:var(--text)}
+.pd-urg{margin-top:22px;display:flex;flex-direction:column;align-items:center;gap:8px;padding:18px 30px;border-radius:22px;background:#000;color:var(--text);box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.pd-ltd{font-family:var(--display);font-weight:900;font-style:italic;text-transform:uppercase;font-size:clamp(26px,3vw,40px);line-height:.95;color:var(--orange)}
 .pd-tlabel{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.pd-timer{display:flex;align-items:flex-start;gap:8px;font-family:var(--display);font-weight:900}
-.pd-timer>div{display:flex;flex-direction:column;align-items:center;min-width:64px}
-.pd-timer b{font-size:clamp(38px,4vw,56px);line-height:.9;color:var(--orange);font-variant-numeric:tabular-nums}
+.pd-timer{display:flex;align-items:flex-start;gap:10px;font-family:var(--display);font-weight:900}
+.pd-timer>div{display:flex;flex-direction:column;align-items:center;min-width:84px;padding:8px 10px 6px;border-radius:14px;background:#151515;border:1px solid var(--line-2)}
+.pd-timer b{font-size:clamp(48px,5.4vw,76px);line-height:.9;color:var(--orange);font-variant-numeric:tabular-nums}
 .pd-timer small{font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.pd-timer i{font-style:normal;font-size:clamp(30px,3vw,44px);line-height:1;color:var(--muted-2)}
-.pd-ltd{font-family:var(--display);font-weight:900;font-style:italic;text-transform:uppercase;font-size:clamp(28px,3.4vw,46px);line-height:.95;color:var(--orange)}
-.pd-limit{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700}
+.pd-timer i{font-style:normal;font-size:clamp(40px,4vw,60px);line-height:1.1;color:var(--muted-2)}
+.pd-limit{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;margin-top:4px}
 .pd-limit i{width:8px;height:8px;border-radius:50%;background:var(--orange)}
 .pd-cta{margin-top:20px;background:#000;color:#fff;box-shadow:0 14px 40px -12px rgba(0,0,0,.6)}
 .pd-cta:hover{box-shadow:0 20px 50px -12px rgba(0,0,0,.8)}
-.pd-stamp{position:absolute;right:max(5vw,16px);top:14%;width:clamp(96px,13vw,180px);aspect-ratio:1;border-radius:50%;background:#000;color:var(--orange);display:grid;place-content:center;font-family:var(--display);font-weight:900;font-size:clamp(30px,4vw,56px);line-height:.85;text-align:center;border:3px dashed var(--orange);outline:6px solid #000}
+.pd-stamp{position:absolute;right:max(5vw,16px);top:12%;width:clamp(96px,13vw,180px);aspect-ratio:1;border-radius:50%;background:#000;color:var(--orange);display:grid;place-content:center;font-family:var(--display);font-weight:900;font-size:clamp(30px,4vw,56px);line-height:.85;text-align:center;border:3px dashed var(--orange);outline:6px solid #000}
 .pd-stamp small{font-size:.45em;letter-spacing:.12em}
 @media (max-width:700px){
-  .pd-stamp{top:9%;right:12px}
-  .pd-urg{padding:14px 16px}
-  .pd-timer>div{min-width:52px}
+  .pd-stamp{top:7%;right:12px}
+  .pd-urg{padding:14px 18px}
+  .pd-timer>div{min-width:70px}
 }
+/* the page countdown, inline wherever it appears */
+.tmr{font-family:var(--display);font-weight:900;color:var(--orange);letter-spacing:.03em;font-variant-numeric:tabular-nums}
+.tmr b{display:inline!important;font:inherit!important;color:inherit!important;line-height:inherit!important}
+.tm-inline{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 14px;border-radius:999px;background:rgba(252,84,0,.1);border:1px solid rgba(252,84,0,.35);font-size:13.5px;font-weight:700}
+.tm-inline .tmr{font-size:20px}
+.final-tm{position:relative;margin:-14px auto 26px;font-weight:700;color:var(--muted)}
+.final-tm .tmr{font-size:28px;margin-left:6px}
+.sticky-cta .tmr{font-size:13px}
 /* countdown inside the offer card */
 .card-cd{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;padding:10px 14px;border-radius:12px;background:rgba(252,84,0,.1);border:1px solid rgba(252,84,0,.35);font-size:13.5px;font-weight:700}
-.card-cd .cd{font-family:var(--display);font-weight:900;font-size:22px;color:var(--orange);letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.card-cd .tmr{font-size:22px}
 
 /* reveal helpers */
 .rv{opacity:0;transform:translateY(40px)}
@@ -577,6 +575,7 @@ body{background:#000}
         </div>
         <div class="off-badge">47%<small>OFF</small></div>
       </div>
+      <div class="tm-inline h-fade" style="margin:0 0 22px">Oferta termina em <span class="tmr"><b data-u="m">15</b>:<b data-u="s">00</b></span></div>
       <div class="hero-ctas h-fade">
         <a href="#oferta" class="btn magnetic">Quero minha Smart Bike
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -900,37 +899,25 @@ body{background:#000}
   </div>
 </section>
 
-<!-- PRICE DRIVE: the old price falls into the flywheel, the camera dives in and the new price + countdown burst out -->
+<!-- PRICE DROP: old price is struck and crumbles, orange wipe, new price + the page countdown -->
 <section class="pdrive" aria-label="De R$ 3.990 por R$ 2.099, 47% OFF por tempo limitado">
+  <div class="pd-wipe" aria-hidden="true"></div>
   <div class="pd-stage">
-    <div class="pd-lines" aria-hidden="true"></div>
     <div class="pd-old" aria-hidden="true"><small>Preço normal</small><div class="pd-old-n"><span>R$</span><span>&nbsp;</span><span>3</span><span>.</span><span>9</span><span>9</span><span>0</span><i class="pd-strike"></i></div></div>
-    <div class="pd-core" aria-hidden="true">
-      <div class="pd-glow"></div>
-      <svg class="pd-rings" viewBox="0 0 600 600">
-        <circle class="pd-r1" cx="300" cy="300" r="280" fill="none" stroke="#fc5400" stroke-width="2"/>
-        <circle class="pd-r2" cx="300" cy="300" r="236" fill="none" stroke="#fc5400" stroke-width="12" stroke-dasharray="2 16" opacity=".7"/>
-        <circle class="pd-r3" cx="300" cy="300" r="196" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1" stroke-dasharray="4 10"/>
-      </svg>
-      <img class="pd-bike" src="assets/bike-cut.webp" alt="">
-    </div>
-    <div class="pd-flash" aria-hidden="true"></div>
-    <div class="pd-flood">
-      <div class="pd-final">
-        <small class="pd-k">Preço de lançamento</small>
-        <b class="pd-new"><span>R$</span> <span>2</span><span>.</span><span>0</span><span>9</span><span>9</span></b>
-        <p class="pd-sub">15x de R$ 139,93 sem juros · R$ 1.889,10 no Pix · frete grátis*</p>
-        <div class="pd-urg">
-          <b class="pd-ltd">Oferta por tempo limitado</b>
-          <span class="pd-tlabel">Esta condição termina em</span>
-          <div class="pd-timer" role="timer"><div><b data-u="m">15</b><small>min</small></div><i>:</i><div><b data-u="s">00</b><small>seg</small></div></div>
-          <span class="pd-limit"><i></i>Unidades com preço de lançamento são limitadas</span>
-        </div>
-        <a href="https://megagym.com.br/cart/67626117005586:1" class="btn pd-cta">Garantir a minha agora
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="pd-final">
+      <small class="pd-k">Preço de lançamento</small>
+      <b class="pd-new"><span>R$</span> <span>2</span><span>.</span><span>0</span><span>9</span><span>9</span></b>
+      <p class="pd-sub">15x de R$ 139,93 sem juros · R$ 1.889,10 no Pix · frete grátis*</p>
+      <div class="pd-urg">
+        <b class="pd-ltd">Oferta por tempo limitado</b>
+        <span class="pd-tlabel">Esta condição termina em</span>
+        <div class="pd-timer" role="timer"><div><b data-u="m">15</b><small>min</small></div><i>:</i><div><b data-u="s">00</b><small>seg</small></div></div>
+        <span class="pd-limit"><i></i>Unidades com preço de lançamento são limitadas</span>
       </div>
-      <div class="pd-stamp" aria-hidden="true">47%<small>OFF</small></div>
+      <a href="https://megagym.com.br/cart/67626117005586:1" class="btn pd-cta">Garantir a minha agora
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
+    <div class="pd-stamp" aria-hidden="true">47%<small>OFF</small></div>
   </div>
 </section>
 
@@ -953,7 +940,7 @@ body{background:#000}
           <div class="big"><small>R$</small>2.099<small>,00</small></div>
           <div class="inst">ou <b>15x de R$ 139,93</b> sem juros</div>
           <span class="pix">◆ R$ 1.889,10 no Pix (10% off)</span>
-          <div class="card-cd"><span class="cd">⚡</span>Preço de lançamento por tempo limitado · unidades limitadas</div>
+          <div class="card-cd">Oferta por tempo limitado. Termina em <span class="tmr"><b data-u="m">15</b>:<b data-u="s">00</b></span></div>
           <ul>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg>Frete grátis*</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg>1 ano de garantia estendida</li>
@@ -1017,6 +1004,7 @@ body{background:#000}
   <div class="wrap">
     <h2 class="display rv">Amanhã às 6h,<br><span class="o">você já pedala.</span></h2>
     <p class="lead rv">Pare de pagar por um treino que você não faz. Garanta a sua Smart Bike Magnetic 13K com 47% OFF e frete grátis.</p>
+    <p class="final-tm rv">Condição de lançamento termina em <span class="tmr"><b data-u="m">15</b>:<b data-u="s">00</b></span></p>
     <a href="https://megagym.com.br/cart/67626117005586:1" class="btn magnetic rv">Garantir a minha por R$ 2.099
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
@@ -1032,7 +1020,7 @@ body{background:#000}
 </footer>
 
 <div class="sticky-cta" id="stickyCta">
-  <div class="p"><b>R$ 2.099</b><span>15x R$ 139,93 · frete grátis*</span></div>
+  <div class="p"><b>R$ 2.099</b><span>Termina em <span class="tmr"><b data-u="m">15</b>:<b data-u="s">00</b></span> · 15x R$ 139,93</span></div>
   <a href="https://megagym.com.br/cart/67626117005586:1" class="btn">Comprar</a>
 </div>
 
@@ -1061,12 +1049,13 @@ body{background:#000}
     if(exc[v]){r.textContent='Para '+exc[v]+', o frete é calculado no checkout.';r.className='ship-res no'}
     else{r.textContent='✓ Frete GRÁTIS para '+v+'! Você não paga nada pela entrega.';r.className='ship-res ok'}
   });
-  // Countdown in the price animation: counts down TIMER_MIN minutes and starts over when it reaches zero.
+  // One countdown for the whole page (price animation, hero, offer card, final CTA, sticky bar):
+  // counts down TIMER_MIN minutes and starts over when it reaches zero.
   const TIMER_MIN = 15, TIMER_MS = TIMER_MIN*6e4, timerStart = Date.now();
   function tickTimer(){
     const left = TIMER_MS - ((Date.now()-timerStart) % TIMER_MS);
     const v={m:String(Math.floor(left/6e4)).padStart(2,'0'), s:String(Math.floor(left%6e4/1e3)).padStart(2,'0')};
-    $$('.pd-timer [data-u]').forEach(b=>{ if(b.textContent!==v[b.dataset.u]) b.textContent=v[b.dataset.u]; });
+    $$('[data-u]').forEach(b=>{ if(b.textContent!==v[b.dataset.u]) b.textContent=v[b.dataset.u]; });
   }
   tickTimer(); setInterval(tickTimer,250);
   // Calculator
@@ -1284,60 +1273,30 @@ body{background:#000}
       .to('.ig-big',{scale:1.04,duration:.8},5.8);
   })();
 
-  /* ---------- PRICE DRIVE ---------- */
+  /* ---------- PRICE DROP ---------- */
   (function(){
     const sec=$('.pdrive');if(!sec)return;
-    const lines=$('.pd-lines',sec),N=24;
-    for(let i=0;i<N;i++){const l=document.createElement('i');l.style.transform='rotate('+(i*360/N)+'deg)';lines.appendChild(l)}
-    const L=lines.children,digits=$$('.pd-old-n span',sec);
-    const r1=$('.pd-r1',sec),len=2*Math.PI*280;
-    // where the flywheel sits on screen, as % of the stage: the orange bursts out from there
-    const hub=()=>{const st=sec.getBoundingClientRect(),b=$('.pd-bike',sec).getBoundingClientRect();
-      return ((b.left-st.left+b.width*.61)/st.width*100).toFixed(1)+'% '+((b.top-st.top+b.height*.68)/st.height*100).toFixed(1)+'%'};
-    gsap.set(r1,{strokeDasharray:len,strokeDashoffset:len});
-    gsap.set('.pd-r2,.pd-r3',{scale:.6,opacity:0});
-    gsap.set('.pd-glow',{opacity:0,scale:.6});
-    gsap.set('.pd-bike',{scale:.5,opacity:0,y:60});
-    gsap.set('.pd-old',{opacity:0,y:-30});
-    gsap.set(L,{scaleY:0,opacity:0});
+    const digits=$$('.pd-old-n span',sec);
+    gsap.set('.pd-old',{opacity:0,scale:.85});
     gsap.set('.pd-new span',{yPercent:120,opacity:0,scale:2.2,rotate:-8});
-    gsap.set('.pd-k,.pd-sub,.pd-urg,.pd-cta',{opacity:0,y:30});
+    gsap.set('.pd-k,.pd-sub,.pd-cta',{opacity:0,y:30});
+    gsap.set('.pd-urg',{opacity:0,y:40,scale:.9});
     gsap.set('.pd-stamp',{scale:0,rotate:-220,opacity:0});
-    const tl=gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:sec,start:'top top',end:'+=300%',pin:true,scrub:1,anticipatePin:1,refreshPriority:1,invalidateOnRefresh:true}});
+    const tl=gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:sec,start:'top top',end:'+=220%',pin:true,scrub:1,anticipatePin:1,refreshPriority:1}});
     tl
-      // 1. the bike and the old price arrive
-      .to('.pd-old',{opacity:1,y:0,duration:.6,ease:'power3.out'},0)
-      .to('.pd-bike',{scale:1,opacity:1,y:0,duration:.9,ease:'power3.out'},0.1)
-      .to(r1,{strokeDashoffset:0,duration:1,ease:'power2.inOut'},0.2)
-      .to('.pd-r2,.pd-r3',{scale:1,opacity:1,stagger:.12,duration:.7,ease:'back.out(1.6)'},0.4)
-      .to('.pd-glow',{opacity:1,scale:1,duration:.8},0.4)
-      // 2. strike-through, the digits fall into the flywheel while the rings spin up
-      .to('.pd-strike',{scaleX:1,duration:.45,ease:'power2.inOut'},1.0)
-      .to(digits,{y:()=>gsap.utils.random(260,460),x:()=>gsap.utils.random(-60,60),rotate:()=>gsap.utils.random(-90,90),scale:.3,opacity:0,stagger:{each:.06,from:'random'},duration:.9,ease:'power2.in'},1.5)
-      .to('.pd-old small,.pd-strike',{opacity:0,duration:.3},1.7)
-      .to('.pd-r1',{rotate:540,duration:2,ease:'power2.in'},1.2)
-      .to('.pd-r2',{rotate:-900,duration:2,ease:'power2.in'},1.2)
-      .to('.pd-r3',{rotate:720,duration:2,ease:'power2.in'},1.2)
-      .to(L,{scaleY:1,opacity:1,stagger:{each:.03,from:'random'},duration:.7,ease:'power2.out'},1.9)
-      .to(L,{y:'16vmax',duration:1.2,ease:'power2.in'},2.3)
-      .to('.pd-bike',{keyframes:{x:[0,-4,5,-3,4,-2,0],y:[0,3,-4,2,-3,1,0]},duration:.9},2.1)
-      .to('.pd-glow',{scale:1.7,duration:1},2.3)
-      // 3. dive into the flywheel, flash, orange bursts out
-      .set('.pd-bike',{filter:'none'},2.95)
-      .to('.pd-core',{scale:5.5,transformOrigin:'61% 68%',duration:1.2,ease:'power3.in'},3.0)
-      .to(L,{opacity:0,duration:.5},3.3)
-      .fromTo('.pd-flood',{clipPath:()=>'circle(0% at '+hub()+')'},{clipPath:()=>'circle(150% at '+hub()+')',duration:1,ease:'power3.inOut'},3.75)
-      .to('.pd-flash',{opacity:.9,duration:.12},3.9)
-      .to('.pd-flash',{opacity:0,duration:.4},4.02)
-      .fromTo('.pd-core,.pd-lines,.pd-old',{visibility:'visible'},{visibility:'hidden',duration:.01,immediateRender:false},4.8)
-      // 4. the new price slams in, stamp, urgency, CTA
-      .to('.pd-k',{opacity:1,y:0,duration:.4},4.5)
-      .to('.pd-new span',{yPercent:0,opacity:1,scale:1,rotate:0,stagger:.07,duration:.6,ease:'back.out(2.2)'},4.6)
-      .to('.pd-stamp',{scale:1,rotate:-12,opacity:1,duration:.6,ease:'back.out(2.5)'},5.0)
-      .to('.pd-sub',{opacity:1,y:0,duration:.4},5.1)
-      .to('.pd-urg',{opacity:1,y:0,duration:.5,ease:'back.out(1.6)'},5.3)
-      .to('.pd-cta',{opacity:1,y:0,duration:.4},5.6)
-      .to('.pd-stamp',{rotate:-4,duration:.5},5.8);
+      .to('.pd-old',{opacity:1,scale:1,duration:.6,ease:'power3.out'},0)
+      .to('.pd-strike',{scaleX:1,duration:.45,ease:'power2.inOut'},.6)
+      .to(digits,{y:()=>gsap.utils.random(320,620),x:()=>gsap.utils.random(-80,80),rotate:()=>gsap.utils.random(-100,100),opacity:0,stagger:{each:.06,from:'random'},duration:.9,ease:'power2.in'},1.0)
+      .to('.pd-old small,.pd-strike',{opacity:0,duration:.3},1.2)
+      .to('.pd-wipe',{scaleX:1,duration:.7,ease:'expo.inOut'},1.5)
+      .set('.pd-old',{visibility:'hidden'},2.2)
+      .to('.pd-k',{opacity:1,y:0,duration:.4},1.9)
+      .to('.pd-new span',{yPercent:0,opacity:1,scale:1,rotate:0,stagger:.07,duration:.6,ease:'back.out(2.2)'},2.0)
+      .to('.pd-stamp',{scale:1,rotate:-12,opacity:1,duration:.6,ease:'back.out(2.5)'},2.4)
+      .to('.pd-sub',{opacity:1,y:0,duration:.4},2.5)
+      .to('.pd-urg',{opacity:1,y:0,scale:1,duration:.6,ease:'back.out(1.8)'},2.7)
+      .to('.pd-cta',{opacity:1,y:0,duration:.4},3.0)
+      .to('.pd-stamp',{rotate:-4,duration:.5},3.2);
   })();
 
   /* ---------- generic reveals ---------- */
